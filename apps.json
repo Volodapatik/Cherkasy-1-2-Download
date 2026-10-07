@@ -16,6 +16,18 @@
       "apkUrl": "https://github.com/Volodapatik/Cherkasy-1-2/releases/latest/download/app-debug.apk",
       "releasesUrl": "https://github.com/Volodapatik/Cherkasy-1-2/releases",
       "updated": "2026-10-06"
+    },
+    {
+      "id": "zhashkiv-6-2",
+      "name": "Жашків 6.2",
+      "shortDescription": "Графіки відключень світла для окремої черги",
+      "description": "Графіки відключень світла для окремої черги",
+      "icon": "📱",
+      "category": "Корисні",
+      "version": "1.0",
+      "apkUrl": "https://github.com/Volodapatik/Cherkasy-1-2-Download/releases/download/zhashkiv-6-2-1.0/zhashkiv-6-2-1.0.apk",
+      "releasesUrl": "https://github.com/Volodapatik/Cherkasy-1-2-Download/releases/tag/zhashkiv-6-2-1.0",
+      "updated": "2026-10-07"
     }
   ]
 }
