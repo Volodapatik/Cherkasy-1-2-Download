@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Розробник — Черкаси Store</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: #0a0f0c;
+      color: #e8f5e9;
+      min-height: 100vh;
+      padding: 20px 16px 48px;
+      line-height: 1.5;
+    }
+    .wrap { max-width: 560px; margin: 0 auto; }
+    a.back { color: #81c784; text-decoration: none; font-size: 0.95rem; }
+    h1 { margin: 16px 0 8px; font-size: 1.5rem; }
+    .lead { color: #a5d6a7; margin-bottom: 24px; }
+    .card {
+      background: #13261a;
+      border: 1px solid #1b5e20;
+      border-radius: 16px;
+      padding: 18px;
+      margin-bottom: 16px;
+    }
+    .card h2 { font-size: 1.05rem; margin-bottom: 10px; color: #fff; }
+    .card p, .card li { color: #c8e6c9; font-size: 0.92rem; }
+    .card ol, .card ul { padding-left: 20px; margin-top: 8px; }
+    .card li { margin-bottom: 8px; }
+    code, pre {
+      background: #0a1a0e;
+      border-radius: 8px;
+      font-size: 0.8rem;
+    }
+    code { padding: 2px 6px; }
+    pre {
+      padding: 12px;
+      overflow-x: auto;
+      margin-top: 10px;
+      color: #a5d6a7;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    .warn {
+      border-color: #f9a825;
+      background: #1a1808;
+    }
+    .warn h2 { color: #ffe082; }
+    a.link { color: #81c784; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="index.html">← До магазину</a>
+    <h1>Кабінет розробника</h1>
+    <p class="lead">
+      Це твій міні-магазин на GitHub Pages.
+      Нові додатки додаються через файл <strong>apps.json</strong> у репозиторії магазину.
+    </p>
+
+    <div class="card warn">
+      <h2>Важливо</h2>
+      <p>
+        З браузера «залити APK як у Google» тут неможливо — немає сервера.
+        Захист GitHub: тільки власник репо (ти) може змінювати файли.
+        Люди з вулиці додати додаток не можуть.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Як додати новий додаток</h2>
+      <ol>
+        <li>Збери APK (наприклад через GitHub Actions у своєму репо додатку).</li>
+        <li>Виклади APK у <strong>Releases</strong> того репо (файл, наприклад <code>app-debug.apk</code>).</li>
+        <li>Відкрий репо магазину:
+          <a class="link" href="https://github.com/Volodapatik/Cherkasy-1-2-Download" target="_blank" rel="noopener">Cherkasy-1-2-Download</a>
+        </li>
+        <li>Відредагуй файл <code>apps.json</code> — додай новий об’єкт у масив <code>apps</code>.</li>
+        <li>Збережи (Commit). Через 1–2 хв додаток з’явиться в магазині.</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h2>Приклад запису в apps.json</h2>
+      <pre>{
+  "id": "my-app",
+  "name": "Назва додатку",
+  "shortDescription": "Коротко в один рядок",
+  "description": "Повний опис для сторінки додатку.",
+  "icon": "📱",
+  "category": "Інше",
+  "version": "1.0",
+  "apkUrl": "https://github.com/USER/REPO/releases/latest/download/app-debug.apk",
+  "releasesUrl": "https://github.com/USER/REPO/releases",
+  "updated": "2026-10-07"
+}</pre>
+      <p style="margin-top:12px">
+        <code>id</code> — латиницею, унікальний.<br />
+        <code>apkUrl</code> — пряме посилання на файл APK (краще з Releases).
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Посилання</h2>
+      <ul>
+        <li>Магазин: <a class="link" href="index.html">головна</a></li>
+        <li>Репо магазину: <a class="link" href="https://github.com/Volodapatik/Cherkasy-1-2-Download" target="_blank" rel="noopener">GitHub</a></li>
+        <li>Редагувати каталог: <a class="link" href="https://github.com/Volodapatik/Cherkasy-1-2-Download/edit/main/apps.json" target="_blank" rel="noopener">apps.json</a></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Захист</h2>
+      <ul>
+        <li>Змінювати магазин може лише акаунт з правами на репо (ти).</li>
+        <li>Не викладай токени GitHub у чати й у код.</li>
+        <li>APK краще тримати в Releases, не в гілках репо.</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

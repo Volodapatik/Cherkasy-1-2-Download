@@ -1,0 +1,21 @@
+{
+  "storeName": "Черкаси Store",
+  "developer": {
+    "name": "Volodapatik",
+    "page": "developer.html"
+  },
+  "apps": [
+    {
+      "id": "cherkasy-1-2",
+      "name": "Черкаси 1.2",
+      "shortDescription": "Графіки відключення світла для черги 1.2",
+      "description": "Показує графік відключень саме для черги 1.2 і надсилає сповіщення, коли з’являється новий графік з офіційного каналу Черкасиобленерго.",
+      "icon": "⚡",
+      "category": "Комунальні",
+      "version": "1.0",
+      "apkUrl": "https://github.com/Volodapatik/Cherkasy-1-2/releases/latest/download/app-debug.apk",
+      "releasesUrl": "https://github.com/Volodapatik/Cherkasy-1-2/releases",
+      "updated": "2026-10-06"
+    }
+  ]
+}

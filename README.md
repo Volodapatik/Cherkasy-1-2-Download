@@ -1,24 +1,24 @@
-# Черкаси 1.2 — сторінка завантаження
+# Черкаси Store
 
-Міні-сторінка для завантаження додатку **Черкаси 1.2** (графіки відключення світла, черга 1.2).
+Міні-магазин додатків (GitHub Pages).
 
-## Посилання для людей
+**Магазин:** https://volodapatik.github.io/Cherkasy-1-2-Download/
 
-Після увімкнення GitHub Pages:
+**Розробник:** https://volodapatik.github.io/Cherkasy-1-2-Download/developer.html
 
-**https://volodapatik.github.io/Cherkasy-1-2-Download/**
+## Структура
 
-## Що тут є
+| Файл | Призначення |
+|------|-------------|
+| `index.html` | Вітрина магазину |
+| `app.html` | Сторінка одного додатку + кнопка Встановити |
+| `developer.html` | Кабінет розробника (як додавати додатки) |
+| `apps.json` | Каталог додатків |
 
-- Проста українська сторінка
-- Кнопка «Завантажити APK» → останній реліз з репо [Cherkasy-1-2](https://github.com/Volodapatik/Cherkasy-1-2)
-- Інструкція встановлення для телефону
+## Додати додаток
 
-## Увімкнути GitHub Pages
+1. APK у Releases свого репо
+2. Дописати запис у `apps.json`
+3. Commit → через хвилину видно в магазині
 
-1. Settings → Pages
-2. Source: **Deploy from a branch**
-3. Branch: **main** / folder **/** (root)
-4. Save
-
-Через 1–2 хвилини сторінка буде доступна.
+Деталі — у [developer.html](developer.html).

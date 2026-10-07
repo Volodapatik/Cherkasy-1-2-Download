@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>Додаток — Черкаси Store</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: #0a0f0c;
+      color: #e8f5e9;
+      min-height: 100vh;
+      padding: 20px 16px 40px;
+    }
+    .back {
+      display: inline-block;
+      color: #81c784;
+      text-decoration: none;
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+    }
+    .card {
+      background: #13261a;
+      border: 1px solid #1b5e20;
+      border-radius: 22px;
+      padding: 28px 20px;
+      max-width: 440px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .icon {
+      width: 88px;
+      height: 88px;
+      margin: 0 auto 16px;
+      background: #1b5e20;
+      border-radius: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 44px;
+    }
+    h1 { font-size: 1.5rem; margin-bottom: 8px; }
+    .meta { color: #81c784; font-size: 0.9rem; margin-bottom: 16px; }
+    .desc {
+      text-align: left;
+      color: #c8e6c9;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-bottom: 24px;
+    }
+    .btn {
+      display: block;
+      width: 100%;
+      background: #fff;
+      color: #1b5e20;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 1.2rem;
+      padding: 18px;
+      border-radius: 14px;
+      margin-bottom: 12px;
+    }
+    .btn-sec {
+      background: transparent;
+      color: #a5d6a7;
+      border: 2px solid #2e7d32;
+      font-size: 0.95rem;
+      padding: 12px;
+      font-weight: 600;
+    }
+    .steps {
+      text-align: left;
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px solid #1b5e20;
+      font-size: 0.9rem;
+      color: #a5d6a7;
+      line-height: 1.55;
+    }
+    .steps strong { color: #fff; }
+    .steps ol { padding-left: 20px; margin-top: 8px; }
+    .steps li { margin-bottom: 8px; }
+    .err { text-align: center; color: #ef9a9a; padding: 40px 16px; }
+  </style>
+</head>
+<body>
+  <a class="back" href="index.html">← До магазину</a>
+  <div id="root"><p class="err">Завантаження…</p></div>
+
+  <script>
+    function qs(name) {
+      return new URLSearchParams(location.search).get(name);
+    }
+    function escapeHtml(s) {
+      return String(s)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+    async function load() {
+      const id = qs('id');
+      const root = document.getElementById('root');
+      if (!id) {
+        root.innerHTML = '<p class="err">Додаток не знайдено</p>';
+        return;
+      }
+      try {
+        const res = await fetch('apps.json?t=' + Date.now());
+        const data = await res.json();
+        const app = (data.apps || []).find(a => a.id === id);
+        if (!app) {
+          root.innerHTML = '<p class="err">Додаток не знайдено</p>';
+          return;
+        }
+        document.title = app.name + ' — Черкаси Store';
+        root.innerHTML = `
+          <div class="card">
+            <div class="icon">${app.icon || '📱'}</div>
+            <h1>${escapeHtml(app.name)}</h1>
+            <div class="meta">${escapeHtml(app.category || '')} · версія ${escapeHtml(app.version || '1.0')}</div>
+            <p class="desc">${escapeHtml(app.description || app.shortDescription || '')}</p>
+            <a class="btn" href="${escapeHtml(app.apkUrl)}">Встановити</a>
+            ${app.releasesUrl ? `<a class="btn btn-sec" href="${escapeHtml(app.releasesUrl)}" target="_blank" rel="noopener">Усі версії</a>` : ''}
+            <div class="steps">
+              <strong>Після натискання «Встановити»:</strong>
+              <ol>
+                <li>Файл почне завантажуватись</li>
+                <li>Відкрийте його в «Завантаженнях»</li>
+                <li>Натисніть «Встановити»</li>
+                <li>Дозвольте встановлення з цього джерела, якщо спитає</li>
+              </ol>
+            </div>
+          </div>
+        `;
+      } catch (e) {
+        root.innerHTML = '<p class="err">Помилка завантаження</p>';
+      }
+    }
+    load();
+  </script>
+</body>
+</html>

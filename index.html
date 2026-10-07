@@ -3,95 +3,142 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <title>Черкаси 1.2</title>
+  <title>Черкаси Store</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-      background: #0a1a0e;
-      color: #fff;
+      background: #0a0f0c;
+      color: #e8f5e9;
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 20px 16px 40px;
+      padding-bottom: 40px;
     }
-    .card {
-      background: #1b5e20;
-      border-radius: 24px;
-      padding: 36px 22px 28px;
-      max-width: 400px;
-      width: 100%;
+    header {
+      background: linear-gradient(160deg, #1b5e20, #0d2818);
+      padding: 28px 20px 24px;
       text-align: center;
     }
-    .icon {
-      width: 88px;
-      height: 88px;
-      margin: 0 auto 18px;
-      background: #2e7d32;
-      border-radius: 22px;
+    header h1 { font-size: 1.6rem; margin-bottom: 4px; }
+    header p { color: #a5d6a7; font-size: 0.95rem; }
+    nav {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: #c8e6c9;
+      text-decoration: none;
+      font-size: 0.9rem;
+      padding: 8px 14px;
+      border: 1px solid #2e7d32;
+      border-radius: 999px;
+    }
+    nav a:hover { background: #2e7d32; color: #fff; }
+    main { max-width: 520px; margin: 0 auto; padding: 20px 16px; }
+    .section-title {
+      font-size: 1.05rem;
+      color: #81c784;
+      margin-bottom: 14px;
+      font-weight: 600;
+    }
+    .app-card {
+      background: #13261a;
+      border: 1px solid #1b5e20;
+      border-radius: 18px;
+      padding: 18px;
+      margin-bottom: 14px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.15s;
+    }
+    .app-card:active { border-color: #4caf50; }
+    .app-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 16px;
+      background: #1b5e20;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 48px;
+      font-size: 32px;
+      flex-shrink: 0;
     }
-    h1 { font-size: 1.85rem; margin-bottom: 6px; }
-    .sub { color: #a5d6a7; font-size: 1.05rem; margin-bottom: 28px; }
-    .btn {
-      display: block;
-      width: 100%;
-      background: #fff;
-      color: #1b5e20;
-      text-decoration: none;
-      font-weight: 800;
-      font-size: 1.35rem;
-      padding: 20px 16px;
-      border-radius: 16px;
-      margin-bottom: 14px;
-    }
-    .hint {
-      margin-top: 22px;
-      text-align: left;
-      background: #0d2818;
-      border-radius: 16px;
-      padding: 16px 18px;
-      font-size: 1rem;
-      line-height: 1.55;
-      color: #c8e6c9;
-    }
-    .hint strong { color: #fff; }
-    .hint ol { padding-left: 22px; margin-top: 8px; }
-    .hint li { margin-bottom: 10px; }
-    .small {
-      margin-top: 18px;
-      font-size: 0.85rem;
+    .app-info { flex: 1; min-width: 0; }
+    .app-name { font-weight: 700; font-size: 1.15rem; margin-bottom: 4px; }
+    .app-desc { color: #a5d6a7; font-size: 0.9rem; line-height: 1.4; }
+    .app-meta { margin-top: 8px; font-size: 0.8rem; color: #66bb6a; }
+    .empty {
+      text-align: center;
       color: #81c784;
+      padding: 40px 16px;
     }
+    footer {
+      text-align: center;
+      margin-top: 28px;
+      font-size: 0.8rem;
+      color: #558b2f;
+    }
+    footer a { color: #81c784; }
   </style>
 </head>
 <body>
-  <div class="card">
-    <div class="icon">⚡</div>
-    <h1>Черкаси 1.2</h1>
-    <p class="sub">Графік відключення світла<br>черга 1.2</p>
+  <header>
+    <h1>Черкаси Store</h1>
+    <p>Міні-магазин додатків</p>
+    <nav>
+      <a href="index.html">Магазин</a>
+      <a href="developer.html">Розробник</a>
+    </nav>
+  </header>
 
-    <!-- Пряме посилання на APK — одразу починає завантаження -->
-    <a class="btn" href="https://github.com/Volodapatik/Cherkasy-1-2/releases/latest/download/app-debug.apk">
-      Встановити
-    </a>
+  <main>
+    <div class="section-title">Додатки</div>
+    <div id="list"><p class="empty">Завантаження…</p></div>
+  </main>
 
-    <div class="hint">
-      <strong>Після натискання:</strong>
-      <ol>
-        <li>Файл почне <strong>завантажуватись</strong></li>
-        <li>Відкрийте завантаження внизу екрана або в папці «Завантаження»</li>
-        <li>Натисніть <strong>«Встановити»</strong></li>
-        <li>Якщо спитає — дозвольте встановлення з цього джерела</li>
-      </ol>
-    </div>
+  <footer>
+    Не офіційний Google Play · Лише ваші додатки<br />
+    <a href="developer.html">Кабінет розробника</a>
+  </footer>
 
-    <p class="small">Після встановлення відкрийте додаток<br>і дозвольте сповіщення</p>
-  </div>
+  <script>
+    async function load() {
+      const box = document.getElementById('list');
+      try {
+        const res = await fetch('apps.json?t=' + Date.now());
+        const data = await res.json();
+        const apps = data.apps || [];
+        if (!apps.length) {
+          box.innerHTML = '<p class="empty">Поки немає додатків</p>';
+          return;
+        }
+        box.innerHTML = apps.map(app => `
+          <a class="app-card" href="app.html?id=${encodeURIComponent(app.id)}">
+            <div class="app-icon">${app.icon || '📱'}</div>
+            <div class="app-info">
+              <div class="app-name">${escapeHtml(app.name)}</div>
+              <div class="app-desc">${escapeHtml(app.shortDescription || '')}</div>
+              <div class="app-meta">${escapeHtml(app.category || '')} · v${escapeHtml(app.version || '1.0')}</div>
+            </div>
+          </a>
+        `).join('');
+      } catch (e) {
+        box.innerHTML = '<p class="empty">Не вдалося завантажити список</p>';
+      }
+    }
+    function escapeHtml(s) {
+      return String(s)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+    load();
+  </script>
 </body>
 </html>
