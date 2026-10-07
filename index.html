@@ -2,152 +2,96 @@
 <html lang="uk">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Черкаси 1.2 — графіки відключення</title>
-  <meta name="description" content="Завантажити додаток Черкаси 1.2 — графіки відключення світла для черги 1.2" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>Черкаси 1.2</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-      background: #0d1f12;
-      color: #e8f5e9;
+      background: #0a1a0e;
+      color: #fff;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 24px 16px;
-      line-height: 1.5;
+      padding: 20px 16px 40px;
     }
     .card {
       background: #1b5e20;
-      border-radius: 20px;
-      padding: 32px 24px;
-      max-width: 420px;
+      border-radius: 24px;
+      padding: 36px 22px 28px;
+      max-width: 400px;
       width: 100%;
       text-align: center;
-      box-shadow: 0 12px 40px rgba(0,0,0,0.4);
     }
     .icon {
-      width: 72px;
-      height: 72px;
-      margin: 0 auto 16px;
+      width: 88px;
+      height: 88px;
+      margin: 0 auto 18px;
       background: #2e7d32;
-      border-radius: 50%;
+      border-radius: 22px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 36px;
+      font-size: 48px;
     }
-    h1 {
-      font-size: 1.6rem;
-      margin-bottom: 8px;
-      font-weight: 700;
-    }
-    .subtitle {
-      color: #a5d6a7;
-      font-size: 0.95rem;
-      margin-bottom: 24px;
-    }
-    .badge {
-      display: inline-block;
-      background: #0d1f12;
-      color: #81c784;
-      padding: 6px 14px;
-      border-radius: 999px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      margin-bottom: 20px;
-    }
-    p {
-      color: #c8e6c9;
-      font-size: 0.95rem;
-      margin-bottom: 16px;
-      text-align: left;
-    }
+    h1 { font-size: 1.85rem; margin-bottom: 6px; }
+    .sub { color: #a5d6a7; font-size: 1.05rem; margin-bottom: 28px; }
     .btn {
       display: block;
       width: 100%;
       background: #fff;
       color: #1b5e20;
       text-decoration: none;
-      font-weight: 700;
-      font-size: 1.1rem;
-      padding: 16px 20px;
-      border-radius: 14px;
-      margin-top: 8px;
-      transition: transform 0.15s, box-shadow 0.15s;
+      font-weight: 800;
+      font-size: 1.35rem;
+      padding: 20px 16px;
+      border-radius: 16px;
+      margin-bottom: 14px;
     }
-    .btn:active { transform: scale(0.98); }
-    .btn-secondary {
-      background: transparent;
-      color: #a5d6a7;
-      border: 2px solid #4caf50;
-      margin-top: 12px;
-      font-size: 0.95rem;
-      padding: 12px 16px;
-    }
-    .steps {
+    .hint {
+      margin-top: 22px;
       text-align: left;
-      margin-top: 28px;
-      padding-top: 20px;
-      border-top: 1px solid #2e7d32;
-    }
-    .steps h2 {
+      background: #0d2818;
+      border-radius: 16px;
+      padding: 16px 18px;
       font-size: 1rem;
-      margin-bottom: 12px;
-      color: #fff;
-    }
-    .steps ol {
-      padding-left: 20px;
+      line-height: 1.55;
       color: #c8e6c9;
-      font-size: 0.9rem;
     }
-    .steps li { margin-bottom: 8px; }
-    footer {
-      margin-top: 28px;
-      font-size: 0.8rem;
-      color: #66bb6a;
-      text-align: center;
+    .hint strong { color: #fff; }
+    .hint ol { padding-left: 22px; margin-top: 8px; }
+    .hint li { margin-bottom: 10px; }
+    .small {
+      margin-top: 18px;
+      font-size: 0.85rem;
+      color: #81c784;
     }
-    footer a { color: #a5d6a7; }
   </style>
 </head>
 <body>
   <div class="card">
     <div class="icon">⚡</div>
     <h1>Черкаси 1.2</h1>
-    <p class="subtitle">Графіки відключення світла для черги 1.2</p>
-    <div class="badge">Черга 1.2 · Черкасиобленерго</div>
+    <p class="sub">Графік відключення світла<br>черга 1.2</p>
 
-    <p>
-      Додаток показує графік відключень саме для <strong>черги 1.2</strong>
-      і надсилає сповіщення, коли з’являється новий графік.
-    </p>
-
-    <!-- Кнопка веде на останній реліз основного репо -->
-    <a class="btn" href="https://github.com/Volodapatik/Cherkasy-1-2/releases/latest" target="_blank" rel="noopener">
-      Завантажити APK
-    </a>
-    <a class="btn btn-secondary" href="https://github.com/Volodapatik/Cherkasy-1-2/releases" target="_blank" rel="noopener">
-      Усі версії
+    <!-- Пряме посилання на APK — одразу починає завантаження -->
+    <a class="btn" href="https://github.com/Volodapatik/Cherkasy-1-2/releases/latest/download/app-debug.apk">
+      Встановити
     </a>
 
-    <div class="steps">
-      <h2>Як встановити</h2>
+    <div class="hint">
+      <strong>Після натискання:</strong>
       <ol>
-        <li>Натисніть <strong>«Завантажити APK»</strong></li>
-        <li>На сторінці натисніть на файл <strong>app-debug.apk</strong> (або подібний)</li>
-        <li>Відкрийте завантажений файл</li>
-        <li>Якщо попросить — дозвольте встановлення з цього джерела</li>
-        <li>Відкрийте додаток і дозвольте сповіщення</li>
+        <li>Файл почне <strong>завантажуватись</strong></li>
+        <li>Відкрийте завантаження внизу екрана або в папці «Завантаження»</li>
+        <li>Натисніть <strong>«Встановити»</strong></li>
+        <li>Якщо спитає — дозвольте встановлення з цього джерела</li>
       </ol>
     </div>
-  </div>
 
-  <footer>
-    Джерело графіків: канал Черкасиобленерго<br />
-    <a href="https://github.com/Volodapatik/Cherkasy-1-2">Код додатку на GitHub</a>
-  </footer>
+    <p class="small">Після встановлення відкрийте додаток<br>і дозвольте сповіщення</p>
+  </div>
 </body>
 </html>
